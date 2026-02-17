@@ -1,28 +1,20 @@
-package com.jparelation.relationproject.entity;
+package com.jparelation.relationproject.dto;
 
-import jakarta.persistence.*;
+import com.jparelation.relationproject.entity.Department;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
-@Entity
-@Table(name = "employee")
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+public class EmployeeReq {
     private String name;
     private String email;
     private BigDecimal salary;
-    @ManyToOne
-    @JoinColumn(name = "department_id")
     private Department department;
 }
